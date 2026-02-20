@@ -29,5 +29,4 @@ public class mahasiswa18 {
             return "Kinerja Kurang";
         }
     }
-
 }
