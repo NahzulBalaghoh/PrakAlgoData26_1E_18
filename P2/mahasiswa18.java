@@ -34,7 +34,9 @@ public class mahasiswa18 {
         }
     }
 
-    
+    public mahasiswa18(){
+
+    }
 
     public mahasiswa18(String nm, String nim, double ipk, String kls){
         nama = nm;
