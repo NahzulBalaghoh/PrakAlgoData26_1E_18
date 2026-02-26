@@ -5,7 +5,10 @@ public class mataKuliahDemo18 {
 
     public static void main(String[] args) {
         Scanner nahzul = new Scanner(System.in);
-        mataKuliah18 [] arrayOfMatakuliah = new mataKuliah18[3];
+
+        System.out.println("Masukkan jumlah matakuliah: ");
+        int jumlah = Integer.parseInt(nahzul.nextLine());
+        mataKuliah18 [] arrayOfMatakuliah = new mataKuliah18[jumlah];
 
         for (int i = 0; i < 3; i++) {
             System.out.println("Masukkan Data Matakuliah ke-"+(i+1));
