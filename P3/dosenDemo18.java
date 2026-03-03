@@ -17,10 +17,11 @@ public class dosenDemo18 {
             arrayDosen[i].tambahData(nahzul2, nahzul1);
         }
 
-        for (int i = 0; i < arrayDosen.length; i++) {
-            System.out.println("Data Dosen ke-"+(i+1));
-            arrayDosen[i].tmplData();
-        }
-
+        dataDosen18 info = new dataDosen18();
+        info.dataSemuaDosen(arrayDosen);
+        info.jumlahDosenPerJenisKelamin(arrayDosen);
+        info.rerataUsiaDosenPerJenisKelamin(arrayDosen);
+        info.infoDosenPalingTua(arrayDosen);
+        info.infoDosenPalingMuda(arrayDosen);
     }
 }
