@@ -48,7 +48,7 @@ public class MahasiswaDemo18 {
         System.out.println("menggunakan sequential searching");
         double posisi = list.sequentialSearching(cari);
         int pss = (int)posisi;
-        list.tampilPosisi(posisi, pss);
+        list.tampilPosisi(cari, pss);
         list.tampilDataSearch(cari, pss);
 
         nahzul.close();
