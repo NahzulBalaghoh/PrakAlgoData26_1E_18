@@ -4,39 +4,33 @@ public class MahasiswaDemo18 {
 
     public static void main(String[] args) {
         Scanner nahzul = new Scanner (System.in);
-
-        System.out.println("Masukkan jumlah mahasiswa: ");
-        int n = nahzul.nextInt();
-        nahzul.nextLine();
         
         MahasiswaBerprestasi18 list = new MahasiswaBerprestasi18();
-        list.listMhs = new Mahasiswa18[n];
-        for (int i = 0; i < n; i++) {
-            System.out.println("=== Input Mahasiswa Ke-" + (i+1) + " ===");
+        list.listMhs = new Mahasiswa18[5];
+        for (int i = 0; i < 5 ; i++) {
+            System.out.println("Masukkan Data Mahasiswa Ke-" + (i+1));
 
-            System.out.println("NIM: ");
+            System.out.print("NIM: ");
             String nim = nahzul.nextLine();
 
-            System.out.println("Nama: ");
+            System.out.print("Nama: ");
             String nama = nahzul.nextLine();
 
-            System.out.println("Kelas: ");
+            System.out.print("Kelas: ");
             String kelas = nahzul.nextLine();
 
-            System.out.println("IPK: ");
+            System.out.print("IPK: ");
             double ipk = nahzul.nextDouble();
             nahzul.nextLine();
+
+            System.out.println("-----------------------------------------------");
 
             Mahasiswa18 m = new Mahasiswa18(nim, nama, kelas, ipk);
             list.tambah(m);
         }
 
-        System.out.println("=== Data Mahasiswa Sebelum Sorting ===");
-        list.tampil();
-
-        list.bubbleSort();
-
-        System.out.println("=== Data Mahasiswa Setelah Sorting (IPK DESC) ===");
+        System.out.println("Data yang sudah terurut menggunakan SELECTION SORT (ASC)");
+        list.selectionSort();
         list.tampil();
 
         nahzul.close();
