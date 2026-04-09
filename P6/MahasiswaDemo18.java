@@ -1,26 +1,45 @@
 package P6;
+import java.util.Scanner;
 public class MahasiswaDemo18 {
 
     public static void main(String[] args) {
+        Scanner nahzul = new Scanner (System.in);
+
+        System.out.println("Masukkan jumlah mahasiswa: ");
+        int n = nahzul.nextInt();
+        nahzul.nextLine();
+        
         MahasiswaBerprestasi18 list = new MahasiswaBerprestasi18();
-        Mahasiswa18 m1 = new Mahasiswa18("123", "Zidan", "2A", 3.2);
-        Mahasiswa18 m2 = new Mahasiswa18("124", "Ayu", "2A", 3.5);
-        Mahasiswa18 m3 = new Mahasiswa18("125","Sofi", "2A", 3.1);
-        Mahasiswa18 m4 = new Mahasiswa18("126", "Sita", "2A", 3.9);
-        Mahasiswa18 m5 = new Mahasiswa18("127", "Miki", "2A", 3.7);
+        list.listMhs = new Mahasiswa18[n];
+        for (int i = 0; i < n; i++) {
+            System.out.println("=== Input Mahasiswa Ke-" + (i+1) + " ===");
 
-        list.tambah(m1);
-        list.tambah(m2);
-        list.tambah(m3);
-        list.tambah(m4);
-        list.tambah(m5);
+            System.out.println("NIM: ");
+            String nim = nahzul.nextLine();
 
-        System.out.println("Data Mahasiswa sebelum sorting");
+            System.out.println("Nama: ");
+            String nama = nahzul.nextLine();
+
+            System.out.println("Kelas: ");
+            String kelas = nahzul.nextLine();
+
+            System.out.println("IPK: ");
+            double ipk = nahzul.nextDouble();
+            nahzul.nextLine();
+
+            Mahasiswa18 m = new Mahasiswa18(nim, nama, kelas, ipk);
+            list.tambah(m);
+        }
+
+        System.out.println("=== Data Mahasiswa Sebelum Sorting ===");
         list.tampil();
 
-        System.out.println("Data Mahasiswa setelah sorting berdasarkan IPK (DESC) : ");
         list.bubbleSort();
+
+        System.out.println("=== Data Mahasiswa Setelah Sorting (IPK DESC) ===");
         list.tampil();
+
+        nahzul.close();
 
     }
 }
