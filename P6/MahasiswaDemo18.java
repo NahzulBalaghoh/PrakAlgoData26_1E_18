@@ -3,11 +3,12 @@ import java.util.Scanner;
 public class MahasiswaDemo18 {
 
     public static void main(String[] args) {
-        Scanner nahzul = new Scanner (System.in);
         
         MahasiswaBerprestasi18 list = new MahasiswaBerprestasi18();
-        list.listMhs = new Mahasiswa18[5];
-        for (int i = 0; i < 5 ; i++) {
+        Scanner nahzul = new Scanner (System.in);
+        int jumMhs = 5;
+
+        for (int i = 0; i < jumMhs ; i++) {
             System.out.println("Masukkan Data Mahasiswa Ke-" + (i+1));
 
             System.out.print("NIM: ");
@@ -25,17 +26,22 @@ public class MahasiswaDemo18 {
 
             System.out.println("-----------------------------------------------");
 
-            Mahasiswa18 m = new Mahasiswa18(nim, nama, kelas, ipk);
-            list.tambah(m);
+            list.tambah(new Mahasiswa18(nim, nama, kelas, ipk));
         }
 
-        System.out.println("Data yang sudah terurut menggunakan SELECTION SORT (ASC)");
-        list.selectionSort();
         list.tampil();
+        System.out.println("---------------------------------------------------------");
+        System.out.println("Pencarian data");
+        System.out.println("---------------------------------------------------------");
+        System.out.println("Masukkan ipk mahasiswa yang dicari: ");
+        System.out.print("IPK: ");
+        double cari = nahzul.nextDouble();
 
-        System.out.println("Data yang sudah Terurut menggunakan INSERTION SORT (ASC)");
-        list.insertionSort();
-        list.tampil();
+        System.out.println("menggunakan sequential searching");
+        double posisi = list.sequentialSearching(cari);
+        int pss = (int)posisi;
+        list.tampilPosisi(posisi, pss);
+        list.tampilDataSearch(cari, pss);
 
         nahzul.close();
 
