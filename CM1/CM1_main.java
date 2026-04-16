@@ -9,15 +9,23 @@ public class CM1_main {
         CM1_peminjaman kunci = data[i];
             int j = i-1;
 
-            while (j>= 0 && data[j].denda < kunci.denda) {
-                data [j+1] = data [j];
-                j--;
+            while (j>= 0 ) {//Jawaban Sesi 1 B ini untuk menyeleksi apabila ditemukan denda identik akan diurutkan berdasarkan nama mahasiswa  
+                boolean dendaLebihBesar = data[j].denda < kunci.denda; //ini mengurutkan berdasarkan jumlah denda secara descending 
+                boolean dendaSama = data[j].denda == kunci.denda;
+                boolean namaLebihKecil = data[j].mhs.nama.compareTo(kunci.mhs.nama) > 0;
+
+                if (dendaLebihBesar || (dendaSama && namaLebihKecil)) {
+                    data[j+1] = data[j];
+                    j--;
+                }else{
+                    break;
+                }
             }
             data [j+1] = kunci;
         }
     }
 
-    static void cariDariNim (CM1_peminjaman[] dataCopy, String targetNIM){
+    static void cariDariNim (CM1_peminjaman[] dataCopy, int targetNIM){
         int n = dataCopy.length;
         for (int i = 1; i < n; i++) {
             CM1_peminjaman kunci = dataCopy[i];
@@ -29,9 +37,8 @@ public class CM1_main {
             dataCopy [j+1] = kunci;
         }
         int low = 0, high = n-1, midFound = -1;
-        int targetInt = Integer.parseInt(targetNIM);
+        int targetInt = targetNIM;
 
-        System.out.println("Masukkan NIM: " + targetNIM);
         while (low <=high) {
             int mid = (low + high) / 2;
 
@@ -120,7 +127,7 @@ public class CM1_main {
                 
             } else if (pilih == 5) {
                 System.out.print("Masukkan NIM: ");
-                String nim = nahzul.next();
+                int nim = nahzul.nextInt();
  
                 CM1_peminjaman[] copy = new CM1_peminjaman[pjm.length];
                 for (int i = 0; i < pjm.length; i++) copy[i] = pjm[i];
