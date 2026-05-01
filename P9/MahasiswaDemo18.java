@@ -56,6 +56,7 @@ public class MahasiswaDemo18 {
                     System.out.println("Mahasiswa pertama yang mengumpulkan tugas: " + bawah.nama);
                 }
                 break;
+                
             default:
                 System.out.println("pilihan tidak valid");
         }
