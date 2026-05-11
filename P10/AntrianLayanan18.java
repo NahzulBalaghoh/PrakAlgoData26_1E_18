@@ -112,6 +112,16 @@ public class AntrianLayanan18 {
     public int getJumlaghAntrian () {
         return size;
     }
+
+    public void lihatAkhir () {
+            if (isEmpty()) {
+                System.out.println("Antrian kosong.");
+            }else {
+                System.out.println("Mahasiswa paling belakang: ");
+                System.out.println(" NIM - NAMA - PRODI - KELAS");
+                data[rear].tampilkanData();
+            }
+    }
 }
 
 
