@@ -25,7 +25,6 @@ public class QueueMain18 {
 
             switch (pilih) {
                 case 1:
-                    // c. Mahasiswa mendaftarkan datanya
                     System.out.print("NIM   : ");
                     String nim = nahzul.nextLine();
                     System.out.print("Nama  : ");
