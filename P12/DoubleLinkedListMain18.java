@@ -17,6 +17,13 @@ public class DoubleLinkedListMain18 {
             System.out.println("4. Hapus data di awal");
             System.out.println("5. Hapus data di akhir");
             System.out.println("6. Tampilkan data");
+            System.out.println("7. Tambah data pada indeks tertentu");
+            System.out.println("8. Hapus data setelah NIM");
+            System.out.println("9. Hapus data pada indeks tertentu");
+            System.out.println("10. Tampilkan data pertama");
+            System.out.println("11. Tampilkan data terakhir");
+            System.out.println("12. Tampilkan data pada indeks tertentu");
+            System.out.println("13. Tampilkan jumlah data");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu : ");
             pilihan = nahzul.nextInt();
@@ -46,6 +53,48 @@ public class DoubleLinkedListMain18 {
                     break;
                 case 6 :
                     list.print();
+                    break;
+                case 7:
+                    System.out.print("Masukkan indeks : ");
+                    int idxAdd = nahzul.nextInt();
+                    nahzul.nextLine();
+                    Mahasiswa18 mhsIndex = inputMahasiswa(nahzul);
+                    list.add(idxAdd, mhsIndex);
+                    break;
+
+                case 8:
+                    System.out.print("Masukkan NIM kunci : ");
+                    String nimAfter = nahzul.nextLine();
+                    list.removeAfter(nimAfter);
+                    break;
+
+                case 9:
+                    System.out.print("Masukkan indeks yang dihapus : ");
+                    int idxRemove = nahzul.nextInt();
+                    nahzul.nextLine();
+                    list.remove(idxRemove);
+                    break;
+
+                case 10:
+                    Mahasiswa18 first = list.getFirst();
+                    if (first != null) first.tampil();
+                    break;
+
+                case 11:
+                    Mahasiswa18 last = list.getLast();
+                    if (last != null) last.tampil();
+                    break;
+
+                case 12:
+                    System.out.print("Masukkan indeks : ");
+                    int idxGet = nahzul.nextInt();
+                    nahzul.nextLine();
+                    Mahasiswa18 byIdx = list.getIndex(idxGet);
+                    if (byIdx != null) byIdx.tampil();
+                    break;
+
+                case 13:
+                    System.out.println("Jumlah data : " + list.size());
                     break;
                 case 0 :
                     System.out.println("Program selesai");
