@@ -67,12 +67,25 @@ public class DoubleLinkedList18 {
     public void print () {
         if (isEmpty()) {
             System.out.println("Linked List masih kosong.");
+            return;
         }else {
             Node18 current = head;
             while (current != null) {
                 current.data.tampil();
                 current = current.next;
             }
+        }
+    }
+
+    public void printReverse(){
+        if (isEmpty()) {
+            System.out.println("Linked List masih kosong.");
+            return;
+        }
+        Node18 current = tail;
+        while (current != null) {
+            current.data.tampil();
+            current = current.prev;
         }
     }
 
