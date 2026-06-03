@@ -7,6 +7,7 @@ public class Main18 {
         Scanner nahzul = new Scanner(System.in);
         PembeliDll18 antrian = new PembeliDll18();
         PesananDll18 pesanan = new PesananDll18();
+        LinkedListRekap18 rekap = new LinkedListRekap18(); //instansiasi linked list rekap
         int pilihan;
  
         antrian.tambahPembeli("Ainra", "08224500000");
@@ -21,6 +22,7 @@ public class Main18 {
             System.out.println("2. Cetak Antrian");
             System.out.println("3. Hapus Antrian dan Pesan");
             System.out.println("4. Laporan Pesanan");
+            System.out.println("5. Rekap Pesanan per menu");//menu baru
             System.out.println("0. Keluar");
             System.out.print("Pilih menu : ");
             pilihan = nahzul.nextInt();
@@ -59,13 +61,17 @@ public class Main18 {
  
                     Pesanan18 pesananBaru = new Pesanan18(kode, namaPesanan, harga);
                     pesanan.tambahPesanan(pesananBaru);
+                    rekap.updateRekap(namaPesanan);// Update rekap setiap kali ada pesanan baru
                     System.out.println(pembeli.namaPembeli + " telah memesan " + namaPesanan);
                     break;
  
                 case 4 :
                     pesanan.laporanPesanan();
                     break;
- 
+
+                case 5 :
+                    rekap.cetakRekap();//cetak rekap pesanan per menu
+                    break;
                 case 0 :
                     System.out.println("Terima kasih!");
                     break;
