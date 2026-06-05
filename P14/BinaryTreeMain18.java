@@ -54,6 +54,8 @@ public class BinaryTreeMain18 {
         bstRekursif.cariMaxIPK();
 
 
-        
+        System.out.println("\n=== Tugas 3: tampilMahasiswaIPKdiAtas(3.50) ===");
+        System.out.println("Mahasiswa dengan IPK di atas 3.50:");
+        bstRekursif.tampilMahasiswaIPKdiAtas(bstRekursif.root, 3.50);
     }
 }
