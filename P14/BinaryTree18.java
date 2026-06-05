@@ -167,4 +167,30 @@ public class BinaryTree18 {
             }
         }
     } 
+
+
+
+   public void addRekursif(Node18 node, Mahasiswa18 mahasiswa) {
+        if (isEmpty()) {
+            root = new Node18(mahasiswa);
+        } else {
+            if (mahasiswa.ipk < node.mahasiswa.ipk) {
+                if (node.left == null) {
+                    node.left = new Node18(mahasiswa);
+                } else {
+                    addRekursif(node.left, mahasiswa);
+                }
+            } else {
+                if (node.right == null) {
+                    node.right = new Node18(mahasiswa);
+                } else {
+                    addRekursif(node.right, mahasiswa);
+                }
+            }
+        }
+    }
+
+
+
+    
 }
