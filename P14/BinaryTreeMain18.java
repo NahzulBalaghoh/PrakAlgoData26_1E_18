@@ -49,6 +49,11 @@ public class BinaryTreeMain18 {
         bstRekursif.traverseInOrder(bstRekursif.root);
 
 
+        System.out.println("\n=== Tugas 2: cariMinIPK dan cariMaxIPK ===");
+        bstRekursif.cariMinIPK();
+        bstRekursif.cariMaxIPK();
+
+
         
     }
 }
