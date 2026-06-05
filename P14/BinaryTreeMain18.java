@@ -36,5 +36,19 @@ public class BinaryTreeMain18 {
         bst.delete(3.57);
         System.out.println("\nDaftar semua mahasiswa setelah penghapusan 1 mahasiswa (in order traversal):");
         bst.traverseInOrder(bst.root);
+
+
+        System.out.println("\n\n=== Tugas 1: addRekursif ===");
+        BinaryTree18 bstRekursif = new BinaryTree18();
+        bstRekursif.addRekursif(bstRekursif.root, new Mahasiswa18("244160121", "Ali", "A", 3.57));
+        bstRekursif.addRekursif(bstRekursif.root, new Mahasiswa18("244160221", "Badar", "B", 3.85));
+        bstRekursif.addRekursif(bstRekursif.root, new Mahasiswa18("244160185", "Candra", "C", 3.21));
+        bstRekursif.addRekursif(bstRekursif.root, new Mahasiswa18("244160220", "Dewi", "B", 3.54));
+        bstRekursif.addRekursif(bstRekursif.root, new Mahasiswa18("244160131", "Devi", "A", 3.72));
+        System.out.println("InOrder Traversal hasil addRekursif:");
+        bstRekursif.traverseInOrder(bstRekursif.root);
+
+
+        
     }
 }
