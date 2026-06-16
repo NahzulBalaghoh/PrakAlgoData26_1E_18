@@ -2,14 +2,27 @@ package P14;
 
 public class BinaryTree18 {
     Node18 root;
+    nodeBuku18 rootBuku; // node untuk menyimpan buku
 
     public BinaryTree18() {
         root = null;
+        rootBuku = null;
+    }
+
+    // construktur untuk inisialisasi root nodeBuku18
+    public BinaryTree18(nodeBuku18 rootBuku) {
+        this.rootBuku = rootBuku;
     }
 
     public boolean isEmpty() {
         return root == null;
     }   
+
+    // mengeceek apakah tree buku kosong
+    public boolean isEmptyBuku() {
+        return rootBuku == null;
+    }
+
 
     public void add (Mahasiswa18 mahasiswa) {
        Node18 newNode = new Node18(mahasiswa);
@@ -36,6 +49,65 @@ public class BinaryTree18 {
               }
          }
     }
+
+    // method untuk add diurutkan bersadarkan tahun terbit
+    public void addBuku (buku18 buku) {
+        nodeBuku18 newNode = new nodeBuku18(buku);
+        if (isEmptyBuku()) {
+            rootBuku = newNode;
+        } else {
+            nodeBuku18 current = rootBuku;
+            nodeBuku18 parent = null;
+            while (true) {
+                parent = current;
+                if (buku.tahunTerbit < current.buku.tahunTerbit) {
+                    current = current.left;
+                    if (current == null) {
+                        parent.left = newNode;
+                        return;
+                    }
+                } else {
+                    current = current.right;
+                    if (current == null) {
+                        parent.right = newNode;
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
+    //method untuk menghitung jumlah buku dengan return int
+    public int jumlahTotalBuku(nodeBuku18 node) {
+        if (node == null) {
+            return 0;
+        } else {
+            return 1 + jumlahTotalBuku(node.left) + jumlahTotalBuku(node.right);
+        }
+    }
+
+
+    // method untuk menampilkan buku yang terbit antara tahunAwal dan tahunAkhir menggunakan transversal in order 
+    public void tampilBukuTerbit(nodeBuku18 node, int tahunAwal, int tahunAkhir) {
+        if (node != null) {
+            tampilBukuTerbit(node.left, tahunAwal, tahunAkhir);
+            if (node.buku.tahunTerbit >= tahunAwal && node.buku.tahunTerbit <= tahunAkhir) {
+                node.buku.tampilInformasi();
+            }
+            tampilBukuTerbit(node.right, tahunAwal, tahunAkhir);
+        }
+    }
+
+    // method untuk menampilkan informasi buku dengan tahun terbit paling baru
+    public void tampilBukuTerbaru(nodeBuku18 node) {
+        if (node != null) {
+            tampilBukuTerbaru(node.right);
+            System.out.println("Buku dengan tahun terbit paling baru:");
+            node.buku.tampilInformasi();
+            tampilBukuTerbaru(node.left);
+        }
+    }
+    
 
     boolean find (double ipk) {
         boolean result = false;

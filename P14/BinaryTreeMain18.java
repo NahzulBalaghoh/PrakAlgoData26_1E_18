@@ -57,5 +57,35 @@ public class BinaryTreeMain18 {
         System.out.println("\n=== Tugas 3: tampilMahasiswaIPKdiAtas(3.50) ===");
         System.out.println("Mahasiswa dengan IPK di atas 3.50:");
         bstRekursif.tampilMahasiswaIPKdiAtas(bstRekursif.root, 3.50);
+
+        System.out.println("");
+
+        // Inisialisasi BinaryTree18 untuk menyimpan buku
+        BinaryTree18 treeBuku = new BinaryTree18();
+        // menambahkan data baru 
+        treeBuku.addBuku(new buku18("B01", "Struktur Data Java", "Rahma", 2017));
+        treeBuku.addBuku(new buku18("B02", "Algoritma Pemrograman", "Aldi", 2012));
+        treeBuku.addBuku(new buku18("B03", "Pemrograman Web Modern", "Eko", 2022));
+        treeBuku.addBuku(new buku18("B04", "Dasar-Dasar AI", "Kanaya", 2021));
+        treeBuku.addBuku(new buku18("B05", "Sistem Operasi", "Ayu", 2011));
+        treeBuku.addBuku(new buku18("B06", "Keamanan Jaringan", "Irgi", 2025));
+
+        System.out.println("\n=== 1. Menghitung Jumlah Total Buku ===");
+        int total = treeBuku.jumlahTotalBuku(treeBuku.rootBuku);
+        System.out.println("Jumlah total buku yang terdaftar di sistem: " + total + " buku.");
+        System.out.println("------------------------------------------------------------");
+
+        System.out.println("\n=== 2. Menampilkan Buku Berdasarkan Rentang Tahun ===");
+        // Untuk method tampilBukuTerbit dengan parameter tahunAwal dan tahunAkhir
+        int tahunAwal = 2015;
+        int tahunAkhir = 2021;
+        System.out.println("Daftar Buku Terbit Antara Tahun " + tahunAwal + " s/d " + tahunAkhir + " (InOrder):");
+        treeBuku.tampilBukuTerbit(treeBuku.rootBuku, tahunAwal, tahunAkhir);
+        System.out.println("------------------------------------------------------------");
+
+        System.out.println("\n=== 3. Menampilkan Buku dengan Tahun Terbit Terbaru ===");
+        // Untuk method yang mencari nilai Max (paling kanan di BST)
+        treeBuku.tampilBukuTerbaru(treeBuku.rootBuku);
+        System.out.println("------------------------------------------------------------");
     }
 }
