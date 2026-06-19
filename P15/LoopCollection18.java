@@ -1,4 +1,5 @@
 package P15;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.Stack;
 
@@ -39,5 +40,7 @@ public class LoopCollection18 {
             System.out.printf("%s ", fruits.get(i));
             System.out.print("");
         }
+
+        fruits.set(fruits.size() - 1, "Strawberry");
     }
 }
