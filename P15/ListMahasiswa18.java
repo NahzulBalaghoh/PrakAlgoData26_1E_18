@@ -36,6 +36,25 @@ public class ListMahasiswa18 {
         return -1;
     }
 
+    
+    public void sortAscending() {
+        Collections.sort(mahasiswas, new Comparator<Mahasiswa18>() {
+            @Override
+            public int compare(Mahasiswa18 m1, Mahasiswa18 m2) {
+                return m1.nim.compareTo(m2.nim);
+            }
+        });
+    }
+
+    public void sortDescending() {
+        Collections.sort(mahasiswas, new Comparator<Mahasiswa18>() {
+            @Override
+            public int compare(Mahasiswa18 m1, Mahasiswa18 m2) {
+                return m2.nim.compareTo(m1.nim);
+            }
+        });
+    }
+    
     public int binarySearch(String nim) {
         sortAscending(); 
         
