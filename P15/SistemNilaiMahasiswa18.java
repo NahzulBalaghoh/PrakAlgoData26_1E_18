@@ -172,4 +172,19 @@ public class SistemNilaiMahasiswa18 {
         Collections.sort(daftarNilai, Comparator.comparingDouble(n -> n.nilai));
         tampilNilai();
     }
+
+    // Tugas no.2
+    static void hapusMahasiswaViaQueue(String nim) {
+        Queue<Mahasiswa18> antrian = new LinkedList<>(daftarMahasiswa);
+        List<Mahasiswa18> hasil = new ArrayList<>();
+ 
+        while (!antrian.isEmpty()) {
+            Mahasiswa18 mhs = antrian.poll(); 
+            if (!mhs.nim.equals(nim)) {
+                hasil.add(mhs); 
+            }
+        }
+        daftarMahasiswa = hasil;
+        System.out.println("Data mahasiswa dengan nim " + nim + " telah dihapus.");
+    }
 }
