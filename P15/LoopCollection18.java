@@ -42,5 +42,15 @@ public class LoopCollection18 {
         }
 
         fruits.set(fruits.size() - 1, "Strawberry");
+
+        fruits.add("Mango");
+        fruits.add("Guava");
+        fruits.add("Avocado");
+
+        System.out.println("Sebelum diurutkan: " + fruits);
+        
+        Collections.sort(fruits);
+        
+        System.out.println("Setelah diurutkan secara Ascending: " + fruits);
     }
 }
