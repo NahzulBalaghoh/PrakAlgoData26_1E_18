@@ -2,6 +2,8 @@ package P15;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ListMahasiswa18 {
@@ -32,6 +34,20 @@ public class ListMahasiswa18 {
             }
         }
         return -1;
+    }
+
+    public int binarySearch(String nim) {
+        sortAscending(); 
+        
+        Mahasiswa18 keyMhs = new Mahasiswa18(nim, "", "");
+        Comparator<Mahasiswa18> c = new Comparator<Mahasiswa18>() {
+            @Override
+            public int compare(Mahasiswa18 m1, Mahasiswa18 m2) {
+                return m1.nim.compareTo(m2.nim);
+            }
+        };
+        
+        return Collections.binarySearch(mahasiswas, keyMhs, c);
     }
 
     public static void main(String[] args) {
